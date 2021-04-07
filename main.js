@@ -8,5 +8,5 @@ rec.onresult=function(event){
     console.log(event);
     var content=event.results[0][0].transscript;
     console.log(content);
-    document.getElementById("textbox").innerHTML="content";
+    document.getElementById("textbox").innerHTML=content;
 }
