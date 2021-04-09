@@ -13,7 +13,12 @@ rec.onresult=function(event){
 }
 function speak(){
     var API=window.speechSynthesis;
-    speakdata=document.getElementById("textbox").value;
+    document.getElementById("textbox").value.replace("take","taking");
+    var speakdata=document.getElementById("textbox").value;
+    speakdata.toLowerCase();
+    console.log("before "+speakdata)
+    speakdata.replace("take","taking");
+    console.log("after "+speakdata);
     var utter=new SpeechSynthesisUtterance(speakdata);
     API.speak(utter);
     Webcam.attach(camera);
