@@ -1,5 +1,6 @@
 var speechrec = window.webkitSpeechRecognition;
 var rec = new speechrec();
+
 function start(){
     document.getElementById("textbox").innerHTML="";
     rec.start();
@@ -13,13 +14,14 @@ rec.onresult=function(event){
 }
 function speak(){
     var API=window.speechSynthesis;
+
     document.getElementById("textbox").value.replace("take","taking");
     var speakdata=document.getElementById("textbox").value;
     speakdata.toLowerCase();
-    console.log("before "+speakdata)
-    speakdata.replace("take","taking");
-    console.log("after "+speakdata);
-    var utter=new SpeechSynthesisUtterance(speakdata);
+    console.log("before "+speakdata);
+    var speakdata1=speakdata.replace("take","taking");
+    console.log("after "+speakdata1);
+    var utter=new SpeechSynthesisUtterance(speakdata1);
     API.speak(utter);
     Webcam.attach(camera);
 }
