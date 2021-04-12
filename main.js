@@ -26,10 +26,11 @@ function speak(){
     var utter=new SpeechSynthesisUtterance(speakdata1);
     API.speak(utter);
     Webcam.attach(camera);
-    var n=1;
+    var n=0;
     for (var i=0;i<=5;i++){
         setTimeout(function(){
             n++;
+            console.log(n);
         utterance=new SpeechSynthesisUtterance(n);
         API.speak(utterance);
         },1000);
